@@ -1,15 +1,56 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { WorkerService } from 'src/app/services/worker.service';
+import { FormConfig, FormStyle } from 'src/app/utils/form';
 
 @Component({
   selector: 'app-worker-form',
-  templateUrl: './worker-form.component.html',
-  styleUrls: ['./worker-form.component.scss']
+  template: `<app-form title="Expo Form" [config]="config" [style]="style" [service]="workerService"></app-form>`
 })
-export class WorkerFormComponent implements OnInit {
+export class WorkerFormComponent {
 
-  constructor() { }
+  constructor(
+    public workerService: WorkerService
+  ) { }
 
-  ngOnInit(): void {
+  pending = false;
+  config: FormConfig = {
+    JMBG: {
+      validation: 'required'
+    },
+    FirstName: {
+      validation: 'required'
+    },
+    LastName: {
+      validation: 'required'
+    },
+    ParentName: {
+      validation: 'required'
+    },
+    Address: {
+      validation: 'required'
+    },
+    PhoneNumber: {
+      validation: 'required'
+    },
+    EmailAddresses: {
+      validation: 'required'
+    },
+    Role: {
+      validation: 'required'
+    },
+    HiredFromDate: {
+      validation: 'required'
+    },
+    HiredUntilDate: {
+      validation: 'required'
+    },
+    IsExpoChief: {
+      validation: 'required'
+    }
+  }
+  style: FormStyle = {
+    width: '500px',
+    'margin-top': '200px'
   }
 
 }

@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ExpoService } from 'src/app/services/expo.service';
+import { FormConfig, FormStyle } from 'src/app/utils/form';
 
 @Component({
   selector: 'app-expo-form',
-  templateUrl: './expo-form.component.html',
-  styleUrls: ['./expo-form.component.scss']
+  template: `<app-form title="Expo Form" [config]="config" [style]="style" [service]="expoService"></app-form>`
 })
-export class ExpoFormComponent implements OnInit {
+export class ExpoFormComponent {
 
-  constructor() { }
+  constructor(
+    public expoService: ExpoService
+  ) { }
 
-  ngOnInit(): void {
+  pending = false;
+  config: FormConfig = {
+    Balance: {
+      validation: 'required'
+    },
   }
+  style: FormStyle = {
+    width: '500px',
+    'margin-top': '200px'
+  }
+
 
 }

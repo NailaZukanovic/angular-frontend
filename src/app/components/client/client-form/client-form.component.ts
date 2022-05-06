@@ -1,15 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ClientService } from 'src/app/services/client.service';
+import { FormConfig, FormStyle } from 'src/app/utils/form';
 
 @Component({
   selector: 'app-client-form',
-  templateUrl: './client-form.component.html',
-  styleUrls: ['./client-form.component.scss']
+  template: `<app-form title="Client Form" [config]="config" [style]="style" [service]="clientService"></app-form>`
 })
-export class ClientFormComponent implements OnInit {
+export class ClientFormComponent {
 
-  constructor() { }
+  constructor(
+    public clientService: ClientService
+  ) { }
 
-  ngOnInit(): void {
+  pending = false;
+  config: FormConfig = {
+    JMBG: {
+      validation: 'required'
+    },
+    FirstName: {
+      validation: 'required'
+    },
+    LastName: {
+      validation: 'required'
+    },
+    ParentName: {
+      validation: 'required'
+    },
+    Address: {
+      validation: 'required'
+    },
+    PhoneNumber: {
+      validation: 'required'
+    }
+  }
+  style: FormStyle = {
+    width: '500px',
+    'margin-top': '200px'
   }
 
 }
