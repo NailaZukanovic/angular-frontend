@@ -1,0 +1,30 @@
+<div class="root" [ngStyle]="style">
+    <mat-card class="mat-elevation-z24">
+      <mat-card-content>
+        <h1>{{ title }}</h1>
+        <form [formGroup]="form" (submit)="$event.stopPropagation()">
+          <div [class.disabled]="pending">
+            <mat-form-field *ngFor="let control of controls">
+              <mat-label>{{ capitalize(control) }}</mat-label>
+              <input *ngIf="type(control) === 'text' || type(control) === 'password'" matInput [type]="type(control)"
+                [formControlName]="control" placeholder="Enter {{ control }}" />
+              <input *ngIf="type(control) === 'location'" #locationInput matInput autocomplete="off"
+                [formControlName]="control" placeholder="Country, city, street..." />
+              <mat-select *ngIf="type(control) === 'select'" [formControlName]="control"
+                placeholder="Select {{ control }}">
+                <mat-option *ngFor="let option of options(control)" [value]="option">{{ option }}</mat-option>
+              </mat-select>
+              <mat-error> {{ capitalize(control) }} is required! </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="center">
+            <button *ngIf="!pending" mat-raised-button color="primary" (click)="handleSubmit()">
+              Submit
+            </button>
+            <app-spinner *ngIf="pending"></app-spinner>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

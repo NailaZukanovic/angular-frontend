@@ -1,0 +1,19 @@
+@import "./theme";
+
+.snackbar-success {
+  background-color: #90ee90;
+  color: white;
+}
+
+.snackbar-error {
+  background-color: $warn;
+  color: white;
+}
+
+.mat-simple-snackbar-action {
+  color: black;
+}
+
+.no-padding .mat-dialog-container {
+  padding: 0;
+}

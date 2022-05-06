@@ -1,0 +1,41 @@
+@import "../../../../styles/theme";
+
+.root {
+  margin: 0 auto;
+
+  .mat-card {
+    padding: 2em;
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      margin-top: 3em;
+
+      input[type="file"] {
+        display: none;
+      }
+
+      .file-input {
+        margin-top: 1.5em;
+
+        .file-status {
+          margin-left: 1.5em;
+        }
+
+        .warning {
+          color: $warn;
+        }
+      }
+    }
+
+    .center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3em;
+    }
+  }
+}
