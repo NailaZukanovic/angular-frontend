@@ -39,13 +39,19 @@ export class WorkerFormComponent {
       validation: 'required'
     },
     HiredFromDate: {
+      type: 'date',
       validation: 'required'
     },
     HiredUntilDate: {
+      type: 'date',
       validation: 'required'
     },
     IsExpoChief: {
-      validation: 'required'
+      type: 'select',
+      validation: 'required',
+      options: [{ text: 'Yes', val: true }, { text: 'No', val: false }],
+      optionKey: 'text',
+      optionValue: 'val',
     }
   }
   style: FormStyle = {

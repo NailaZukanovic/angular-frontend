@@ -1,5 +1,5 @@
 export interface Bank{
-    Id: string
+    Id: number
     ClientId: number
     AccountType: string
     CurrencyType: string

@@ -14,7 +14,13 @@ export class ExpoFormComponent {
 
   pending = false;
   config: FormConfig = {
-    Balance: {
+    RegistrationNumber: {
+      validation: 'required'
+    },
+    City: {
+      validation: 'required'
+    },
+    Address: {
       validation: 'required'
     },
   }

@@ -54,6 +54,23 @@ export class FormComponent implements OnInit {
     return this.config[control].options || []
   }
 
+  optionKey(control: string) {
+    return this.config[control].optionKey
+  }
+
+  optionValue(control: string) {
+    return this.config[control].optionValue
+  }
+
+  compareOptions(item1: any, item2: any) {
+    if (typeof item1 === 'object' && typeof item2 === 'object') {
+      if ('Id' in item1 && 'Id' in item2) {
+        return item1['id'] === item2['id']
+      }
+    }
+    return item1 === item2
+  }
+
   async handleSubmit() {
     if (this.form.invalid) {
       this.form.markAsTouched();

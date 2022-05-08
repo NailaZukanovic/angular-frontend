@@ -1,6 +1,6 @@
 export interface Expo{
-    Id: string
-    ClientId: number
-    ExpoId: number
-    Balance: number
+    Id: number
+    RegistrationNumber: number
+    City: string
+    Address: string
 }
