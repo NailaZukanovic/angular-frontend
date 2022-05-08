@@ -19,27 +19,7 @@ export class ExpoListComponent implements OnInit {
   expos: Expo[]
 
   ngOnInit() {
-    //this.expoService.read().subscribe(res => this.expos = res)
-    this.expos = [
-      {
-        Id: 1,
-        RegistrationNumber: 1,
-        City: 'Novi Sad',
-        Address: 'Jevrejska 53',
-      },
-      {
-        Id: 2,
-        RegistrationNumber: 2,
-        City: 'Beograd',
-        Address: 'Ruzveltova 12',
-      },
-      {
-        Id: 3,
-        RegistrationNumber: 3,
-        City: 'Zrenjanin',
-        Address: 'Mike Antica 24',
-      }
-    ]
+    this.expoService.read().subscribe(res => this.expos = res)
   }
 
   create() {

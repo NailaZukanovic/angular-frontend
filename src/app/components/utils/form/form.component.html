@@ -10,7 +10,13 @@
               [type]="type(control)" [formControlName]="control" placeholder="Enter {{ control }}" />
             <input *ngIf="type(control) === 'location'" #locationInput matInput autocomplete="off"
               [formControlName]="control" placeholder="Country, city, street..." />
-            <mat-select *ngIf=" (type(control) === 'select')" [formControlName]="control"
+            <mat-select *ngIf="(type(control) === 'select') && !static(control)" [formControlName]="control"
+              placeholder="Select {{ control }}" [compareWith]="compareOptions">
+              <mat-option *ngFor="let option of options(control) | async"
+                [value]="optionValue(control) ? option[optionValue(control)] : option">
+                {{ optionKey(control) ? option[optionKey(control)] : option }}</mat-option>
+            </mat-select>
+            <mat-select *ngIf="(type(control) === 'select') && static(control)" [formControlName]="control"
               placeholder="Select {{ control }}" [compareWith]="compareOptions">
               <mat-option *ngFor="let option of options(control)"
                 [value]="optionValue(control) ? option[optionValue(control)] : option">

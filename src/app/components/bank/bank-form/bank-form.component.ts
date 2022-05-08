@@ -21,66 +21,14 @@ export class BankFormComponent {
     ClientId: {
       type: 'select',
       validation: 'required',
-      //options: this.clientService.read(),
-      options: [
-        {
-          Id: 1,
-          BankAccountId: 1,
-          JMBG: "1231231231231",
-          FirstName: 'Sinisa',
-          LastName: 'Sinisic',
-          ParentName: 'Sika',
-          Address: 'Stanislava Binickog',
-          PhoneNumber: '06012312312'
-        },
-        {
-          Id: 2,
-          BankAccountId: 2,
-          JMBG: "2342342342342",
-          FirstName: 'Mika',
-          LastName: 'Mikic',
-          ParentName: 'Miklos',
-          Address: 'Milivoja Blaznavca',
-          PhoneNumber: '06023423423'
-        },
-        {
-          Id: 3,
-          BankAccountId: 3,
-          JMBG: "3453453453453",
-          FirstName: 'Pavle',
-          LastName: 'Radenovic',
-          ParentName: 'Vukan',
-          Address: 'Ive Andrica',
-          PhoneNumber: '06034534534'
-        }
-      ],
+      options: this.clientService.read(),
       optionKey: 'Id',
       optionValue: 'Id',
     },
     ExpoId: {
       type: 'select',
       validation: 'required',
-      //options: this.expoService.read(),
-      options: [
-        {
-          Id: 1,
-          RegistrationNumber: 1,
-          City: 'Novi Sad',
-          Address: 'Jevrejska 53',
-        },
-        {
-          Id: 2,
-          RegistrationNumber: 2,
-          City: 'Beograd',
-          Address: 'Ruzveltova 12',
-        },
-        {
-          Id: 3,
-          RegistrationNumber: 3,
-          City: 'Zrenjanin',
-          Address: 'Mike Antica 24',
-        }
-      ],
+      options: this.expoService.read(),
       optionKey: 'Id',
       optionValue: 'Id',
     },
@@ -88,11 +36,13 @@ export class BankFormComponent {
       type: 'select',
       validation: 'required',
       options: ['Dinar', 'Foreign'],
+      static: true
     },
     CurrencyType: {
       type: 'select',
       validation: 'required',
       options: ['RSD', 'USD', 'EUR'],
+      static: true
     },
     Balance: {
       type: 'text',

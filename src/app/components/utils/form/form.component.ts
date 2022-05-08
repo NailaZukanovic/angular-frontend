@@ -62,6 +62,10 @@ export class FormComponent implements OnInit {
     return this.config[control].optionValue
   }
 
+  static(control: string) {
+    return this.config[control].static
+  }
+
   compareOptions(item1: any, item2: any) {
     if (typeof item1 === 'object' && typeof item2 === 'object') {
       if ('Id' in item1 && 'Id' in item2) {

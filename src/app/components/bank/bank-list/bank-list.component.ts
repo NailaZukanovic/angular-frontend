@@ -19,33 +19,7 @@ export class BankListComponent implements OnInit {
   banks: Bank[]
 
   ngOnInit() {
-    //this.bankService.read().subscribe(res => this.banks = res)
-    this.banks = [
-      {
-        Id: 1,
-        ClientId: 1,
-        AccountType: 'Dinar',
-        CurrencyType: '',
-        ExpoId: 1,
-        Balance: 10000
-      },
-      {
-        Id: 2,
-        ClientId: 2,
-        AccountType: 'Foreign',
-        CurrencyType: 'USD',
-        ExpoId: 2,
-        Balance: 10000
-      },
-      {
-        Id: 3,
-        ClientId: 3,
-        AccountType: 'Foreign',
-        CurrencyType: 'EUR',
-        ExpoId: 3,
-        Balance: 10000
-      }
-    ]
+    this.bankService.read().subscribe(res => this.banks = res)
   }
 
   create() {
