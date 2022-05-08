@@ -4,7 +4,7 @@ import { FormConfig, FormStyle } from 'src/app/utils/form';
 
 @Component({
   selector: 'app-worker-form',
-  template: `<app-form title="Expo Form" [config]="config" [style]="style" [service]="workerService"></app-form>`
+  template: `<app-form title="Worker Form" [config]="config" [style]="style" [service]="workerService"></app-form>`
 })
 export class WorkerFormComponent {
 
