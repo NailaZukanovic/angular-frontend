@@ -28,7 +28,7 @@ export class FormComponent implements OnInit {
   @Input() service: StandardRestService<any>
   form: FormGroup;
   get editing() {
-    return this.route.snapshot.params['id'] !== 'new'
+    return this.route.snapshot.params['id']
   }
 
   get controls() {
